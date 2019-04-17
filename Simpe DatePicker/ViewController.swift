@@ -21,8 +21,16 @@ class ViewController: UIViewController {
         let locale = Locale(identifier: "ko_KO")
         myDatePicker.locale = locale
         
-        // DatePicker 모드 설종
+        // DatePicker 모드 설정
         myDatePicker.datePickerMode = UIDatePicker.Mode.date
+        
+        // label 값 초기 설정
+        let date = Date()
+        let format = DateFormatter()
+        format.dateFormat = "yyyy-MM-dd HH:mm EEE a"
+        let formattedDate = format.string(from: date)
+        //print(formattedDate)
+        outLabel.text = formattedDate
     }
 
     @IBAction func changeDatePicker(_ sender: Any) {
